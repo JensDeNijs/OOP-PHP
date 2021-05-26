@@ -1,5 +1,6 @@
 <?php
 
+
 class Beverage
 {
     private string $color;

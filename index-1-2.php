@@ -1,5 +1,6 @@
 <?php
 
+
 class Beverage
 {
     private string $color;
@@ -16,16 +17,6 @@ class Beverage
     public function getInfo()
     {
         return "This beverage is " . $this->temperature . " and " . $this->color;
-    }
-
-    public function setColor(string $color): void
-    {
-        $this->color = $color;
-    }
-
-    public function getColor(): string
-    {
-        return $this->color;
     }
 
 }
@@ -57,17 +48,12 @@ class Beer extends Beverage
     {
         return parent::getInfo() . " and has a " . $this->alcoholPercentage . "% alcohol percentage";
     }
-
-    public function beerInfo()
-    {
-        return "Hi i'm " . $this->name . " and have an alcohol percentage of " . $this->alcoholPercentage . " and I have a " . $this->getColor() . " color.";
-    }
 }
 
 
-//$cola = new Beverage("black", 2);
+$cola = new Beverage("black", 2);
 
-//echo $cola->getInfo();
+echo $cola->getInfo();
 
 $duvel = new Beer("blond", 3.5, "Duvel", 8.5);
 echo "<br>";
@@ -75,7 +61,3 @@ echo $duvel->getInfo();
 echo "<br>";
 echo $duvel->getAlcoholPercentage();
 echo "<br>";
-$duvel->setColor("light");
-echo $duvel->getInfo();
-echo "<br>";
-echo $duvel->beerInfo();
