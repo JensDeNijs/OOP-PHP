@@ -7,14 +7,12 @@ class Beverage
     private float $price;
     private string $temperature;
     const BARNAME = "Het Vervolg";
-    private static $timeServed = 0;
 
     public function __construct(string $color, float $price, string $temperature = "cold")
     {
         $this->color = $color;
         $this->price = $price;
         $this->temperature = $temperature;
-        self::$timeServed ++;
     }
 
     public function getInfo()
@@ -35,12 +33,6 @@ class Beverage
     {
         echo self::BARNAME;
     }
-
-    public static function getTimeServed(): int
-    {
-        return self::$timeServed;
-    }
-
 
 }
 
@@ -88,8 +80,6 @@ class Beer extends Beverage
 //echo $cola->getInfo();
 
 $duvel = new Beer("blond", 3.5, "Duvel", 8.5);
-$fanta = new Beverage("blond", 3.6, "Fanta");
-$cola = new Beverage("zwart", 3.6, "Cola");
 echo "<br>";
 echo $duvel->getInfo();
 echo "<br>";
@@ -102,4 +92,3 @@ echo $duvel->beerInfo();
 echo "<br>";
 $duvel->showBarname();
 echo "<br>";
-echo Beverage::getTimeServed();
